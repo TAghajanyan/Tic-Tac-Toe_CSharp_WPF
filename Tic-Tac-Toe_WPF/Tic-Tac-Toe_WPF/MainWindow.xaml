@@ -8,13 +8,14 @@
         Title="MainWindow" 
         Height="650" 
         Width="800">
-    
-    
-    <Grid Background="Transparent" x:Name="Container">
+
+
+    <Grid Background="LightGray" x:Name="Container">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -23,15 +24,18 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Row="0" Grid.Column="0" x:Name="B0_0"  Content="X" FontSize="80" Click="B0_0_Click"></Button>
-        <Button Grid.Row="0" Grid.Column="1" x:Name="B0_1" Content="O" FontSize="80"></Button>
-        <Button Grid.Row="0" Grid.Column="2" x:Name="B0_2"  FontSize="80"></Button>
-        <Button Grid.Row="1" Grid.Column="0" x:Name="B1_0"  FontSize="80"></Button>
-        <Button Grid.Row="1" Grid.Column="1" x:Name="B1_1"  FontSize="80"></Button>
-        <Button Grid.Row="1" Grid.Column="2" x:Name="B1_2"  FontSize="80"></Button>
-        <Button Grid.Row="2" Grid.Column="0" x:Name="B2_0"  FontSize="80"></Button>
-        <Button Grid.Row="2" Grid.Column="1" x:Name="B2_1"  FontSize="80"></Button>
-        <Button Grid.Row="2" Grid.Column="2" x:Name="B2_2"  FontSize="80"></Button>
+        <Button Grid.Row="0" Grid.Column="0" x:Name="B0_0"  FontSize="80" Click="B_Click"></Button>
+        <Button Grid.Row="0" Grid.Column="1" x:Name="B0_1"  FontSize="80" Click="B_Click"></Button>
+        <Button Grid.Row="0" Grid.Column="2" x:Name="B0_2"  FontSize="80" Click="B_Click"></Button>
+        <Button Grid.Row="1" Grid.Column="0" x:Name="B1_0"  FontSize="80" Click="B_Click"></Button>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="B1_1"  FontSize="80" Click="B_Click"></Button>
+        <Button Grid.Row="1" Grid.Column="2" x:Name="B1_2"  FontSize="80" Click="B_Click"></Button>
+        <Button Grid.Row="2" Grid.Column="0" x:Name="B2_0"  FontSize="80" Click="B_Click"></Button>
+        <Button Grid.Row="2" Grid.Column="1" x:Name="B2_1"  FontSize="80" Click="B_Click"></Button>
+        <Button Grid.Row="2" Grid.Column="2" x:Name="B2_2"  FontSize="80" Click="B_Click"></Button>
+        <Button Grid.Row="3" Grid.Column="2" x:Name="NewGame" FontSize="18" Click="New_Game_Click" Background="LightGreen" Content="New Game"></Button>
+        <Button Grid.Row="3" Grid.Column="0" x:Name="Exit" FontSize="18" Click="Exit_Click" Background="IndianRed" Content="Exit"></Button>
+        <TextBlock Grid.Row="3" Grid.Column="1" x:Name="Result" Width="auto" FontSize="18"></TextBlock>
 
     </Grid>
 
