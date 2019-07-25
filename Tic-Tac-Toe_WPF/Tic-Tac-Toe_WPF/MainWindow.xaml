@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tic_Tac_Toe_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" 
+        Title="Tic-Tac-Toe" 
         Height="331" 
         Width="800">
 

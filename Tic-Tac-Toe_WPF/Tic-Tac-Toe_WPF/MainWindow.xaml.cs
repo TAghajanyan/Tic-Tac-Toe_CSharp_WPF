@@ -21,6 +21,7 @@ namespace Tic_Tac_Toe_WPF
             FirstPage first = new FirstPage();
             first.PlayerOrPC = true;
             Visibility = Visibility.Hidden;
+            first.Title = "Playing with Friend";
             first.Show();
 
         }
@@ -30,6 +31,7 @@ namespace Tic_Tac_Toe_WPF
             FirstPage first = new FirstPage();
             first.PlayerOrPC = false;
             Visibility = Visibility.Hidden;
+            first.Title = "Playing with Computer";
             first.Show();
 
             first.buttonX[0] = first.B0_0;
