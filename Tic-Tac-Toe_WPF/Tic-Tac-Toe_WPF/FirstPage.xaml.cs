@@ -181,7 +181,7 @@ namespace Tic_Tac_Toe_WPF
         {
             for (int i = 0; i < 9; i += 3)
             {
-                if ((board[i] & board[i + 1]) == (SelectType.X | SelectType.O) && board[i + 2] == SelectType.Free)
+                if (((board[i] & board[i + 1]) == SelectType.X || (board[i] & board[i + 1]) == SelectType.O) && board[i + 2] == SelectType.Free)
                 {
                     return i + 2;
                 }
@@ -189,7 +189,7 @@ namespace Tic_Tac_Toe_WPF
             //Tox 2|3
             for (int i = 0; i < 9; i += 3)
             {
-                if ((board[i + 1] & (board[i + 2])) == (SelectType.X | SelectType.O) && board[i] == SelectType.Free)
+                if (((board[i + 1] & (board[i + 2])) == SelectType.X || (board[i] & board[i + 1]) == SelectType.O) && board[i] == SelectType.Free)
                 {
                     return i;
                 }
@@ -197,7 +197,7 @@ namespace Tic_Tac_Toe_WPF
             //Tox 1|3
             for (int i = 0; i < 9; i += 3)
             {
-                if ((board[i] & (board[i + 2])) == (SelectType.X | SelectType.O) && board[i + 1] == SelectType.Free)
+                if (((board[i] & (board[i + 2])) == SelectType.X || (board[i] & board[i + 1]) == SelectType.O) && board[i + 1] == SelectType.Free)
                 {
                     return i + 1;
                 }
@@ -205,7 +205,7 @@ namespace Tic_Tac_Toe_WPF
             //Syun 1|4
             for (int i = 0; i < 3; i++)
             {
-                if ((board[i] & (board[i + 3])) == (SelectType.X | SelectType.O) && board[i + 6] == SelectType.Free)
+                if (((board[i] & (board[i + 3])) == SelectType.X || (board[i] & board[i + 1]) == SelectType.O) && board[i + 6] == SelectType.Free)
                 {
                     return i + 6;
                 }
@@ -213,7 +213,7 @@ namespace Tic_Tac_Toe_WPF
             //Syun 4|7
             for (int i = 3; i < 6; i++)
             {
-                if ((board[i] & (board[i + 3])) == (SelectType.X | SelectType.O) && board[i - 3] == SelectType.Free)
+                if (((board[i] & (board[i + 3])) == SelectType.X || (board[i] & board[i + 1]) == SelectType.O) && board[i - 3] == SelectType.Free)
                 {
                     return i - 3;
                 }
@@ -221,24 +221,24 @@ namespace Tic_Tac_Toe_WPF
             //Syun 1|7
             for (int i = 0; i < 3; i++)
             {
-                if ((board[i] & (board[i + 6])) == (SelectType.X | SelectType.O) && board[i + 3] == SelectType.Free)
+                if (((board[i] & (board[i + 6])) == SelectType.X || (board[i] & board[i + 1]) == SelectType.O) && board[i + 3] == SelectType.Free)
                 {
                     return i + 3;
                 }
             }
 
             //Ankyun  1|9
-            if ((board[0] & (board[8])) == (SelectType.X | SelectType.O)) { return 4; }
+            if (((board[0] & (board[8])) == SelectType.X || (board[0] & board[8]) == SelectType.O) && board[4] == SelectType.Free) { return 4; }
             //Ankyun 3|7
-            if ((board[2] & (board[6])) == (SelectType.X | SelectType.O)) { return 4; }
+            if (((board[2] & (board[6])) == SelectType.X || (board[2] & board[6]) == SelectType.O) && board[4] == SelectType.Free) { return 4; }
             // Ankyun 1|5
-            if ((board[0] & (board[4])) == (SelectType.X | SelectType.O) && board[8] == SelectType.Free) { return 8; }
+            if (((board[0] & (board[4])) == SelectType.X || (board[0] & board[4]) == SelectType.O) && board[8] == SelectType.Free) { return 8; }
             // Ankyun 3|5
-            if ((board[2] & (board[4])) == (SelectType.X | SelectType.O) && board[6] == SelectType.Free) { return 6; }
+            if (((board[2] & (board[4])) == SelectType.X || (board[2] & board[4]) == SelectType.O) && board[6] == SelectType.Free) { return 6; }
             // Ankyun 5|7
-            if ((board[6] & (board[4])) == (SelectType.X | SelectType.O) && board[2] == SelectType.Free) { return 2; }
+            if (((board[6] & (board[4])) == SelectType.X || (board[6] & board[4]) == SelectType.O) && board[2] == SelectType.Free) { return 2; }
             // Ankyun 5|9
-            if ((board[8] & (board[4])) == (SelectType.X | SelectType.O) && board[0] == SelectType.Free) { return 0; }
+            if (((board[8] & (board[4])) == SelectType.X || (board[8] & board[4]) == SelectType.O) && board[0] == SelectType.Free) { return 0; }
 
             return new Random().Next(0, 8);
         }
